@@ -10,7 +10,7 @@
 This project focuses on processing and analyzing large datasets for a television production company. The data, exceeding 20 million records, originates from diverse sources:
 
 - User contract information and interaction data (TXT files)
-- User log watching duration history (JSON files)
+- User log watching history (JSON files)
 - User log search history (Parquet files)
 
 Data is retrieved from various storage solutions, including MySQL, Azure SQL, and the local file system. Subsequently, it undergoes transformation and organization into structured insight tables within a PostgreSQL database.
@@ -19,8 +19,8 @@ Data is retrieved from various storage solutions, including MySQL, Azure SQL, an
 
 #### User Contract & Interaction Data
 ![User Contract Inforamtion & Interaction Data](https://github.com/MarcusLe02/big-data-tv-production/blob/main/contract_interaction.png)
-#### User Watch Duration Data
-![User Watch Duration Data](https://github.com/MarcusLe02/big-data-tv-production/blob/main/log_duration.png)
+#### User Watch History Data
+![User Watch History Data](https://github.com/MarcusLe02/big-data-tv-production/blob/main/log_duration.png)
 #### User Log Search Data
 ![User Log Search Data](https://github.com/MarcusLe02/big-data-tv-production/blob/main/log_search.png)
 
@@ -34,8 +34,7 @@ Data is retrieved from various storage solutions, including MySQL, Azure SQL, an
 
 ## Project Files
 
-- [docker-compose.yml](https://github.com/MarcusLe02/realtime-pipeline-hiring-platform/blob/master/docker-compose.yml): Configure containers for each technology
-- [kafka-stream.py](https://github.com/MarcusLe02/realtime-pipeline-hiring-platform/blob/master/dags/kafka-stream.py): Streams data from the API to Kafka
-- [spark_stream.py](https://github.com/MarcusLe02/realtime-pipeline-hiring-platform/blob/master/spark-stream.py): Processes data from Kafka and stores it in Cassandra
-- [faking_log.py](https://github.com/MarcusLe02/realtime-pipeline-hiring-platform/blob/master/faking_log.py): Generates sample interaction log data for testing
-- [spark_cdc.py](https://github.com/MarcusLe02/realtime-pipeline-hiring-platform/blob/master/spark_cdc.py): Captures changes in Cassandra, transforms and pushes them to MySQL
+- [etl_log_content.py](https://github.com/MarcusLe02/big-data-tv-production/blob/main/etl_log_content.py): Ingests, transforms, and loads watch history data
+- [etl_log_search.py](https://github.com/MarcusLe02/big-data-tv-production/blob/main/etl_log_search.ipynb): Ingests, transforms, and loads log search data
+- [user_analysis.ipynb](https://github.com/MarcusLe02/big-data-tv-production/blob/main/user_analysis.ipynb): Analyzes user behavior from contract information and interaction data
+- [mysql_azuresql_connector_template.ipynb](https://github.com/MarcusLe02/big-data-tv-production/blob/main/mysql_azuresql_connector_template.ipynb): PySpark templates for connecting data sources and destinations
